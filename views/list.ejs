@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CRUD</title>
+    <link rel="stylesheet" href="/css/semantic.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="ui massive menu">
+        <div class="ui container">
+            <div class="item"><a href="/">Home</a></div>
+            
+        </div>
+    </div>
+
+    <table class="ui table green" >
+        <thead>
+            <tr>
+                <th><h3>Club Name</h3></th>
+                <th><h3>Players</h3></th>
+                <th><h3>Coach</h3></th>
+                <th><h3>Edit</h3></th>
+                <th><h3>Delete</h3></th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for (let list of team) { %>
+                <tr>
+                    <td id="teamName"><%- list.name %></td>
+                    <td id="teamPlayers"><%- list.players %></td>
+                    <td id="teamCoach"><%- list.coach %></td>
+                    <td><a  href="/edit/<%= list._id %>"><i class="edit black icon"></i></a></td>
+                    <td><a  href="/viewall/<%= list._id %>"><i id="delete" class="trash black icon"></i></a></td>
+                </tr>
+              <% } %>
+        </tbody> 
+    </table>
+</body>
+</html>
